@@ -1,5 +1,6 @@
-from card import Deck
+from card import Deck, Card
 from player import Dealer, Player
+from typing import List
 
 
 class Table():
