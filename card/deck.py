@@ -9,7 +9,13 @@ class Deck():
         """[summary]
         """
         self.cards = []
-        self.cards.append(Card(Suit.DIAMONDS, 4))
+        # reset()
+
+    def reset(self):
+        """Refill the deck and keep it sorted
+        """
+
+        raise NotImplementedError
 
     def draw(self) -> Card:
         """[summary]
