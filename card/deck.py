@@ -10,3 +10,18 @@ class Deck():
         """
         self.cards = []
         self.cards.append(Card(Suit.DIAMONDS, 4))
+
+    def draw(self) -> Card:
+        """[summary]
+
+        Returns:
+            Card: [description]
+        """
+
+        raise NotImplementedError
+
+    def shuffle(self):
+        """[summary]
+        """
+
+        raise NotImplementedError
