@@ -20,7 +20,7 @@ class Player():
         self.name = name
 
     def bet(self) -> int:
-        """Ask User to bet
+        """Ask the user to bet
 
         Raises:
             NotImplementedError: [description]
