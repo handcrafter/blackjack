@@ -32,6 +32,16 @@ class Table():
         """
         self.players.append(player)
 
+    def is_busted(self, card: List[Card]) -> bool:
+        """[summary]
+
+        Args:
+            card (List[Card]): [description]
+
+        Returns:
+            bool: true if the set of cards lead to busted case
+        """
+
     def play_game(self) -> bool:
         """play single game of blackjack
 
@@ -50,7 +60,9 @@ class Table():
 
         # TODO::deal initial cards to player
 
-        # TODO::ask each player to pick an action
+        # while user card is still valid
+            # TODO::ask each player to pick an action
+            # TODO::deal extra card if necessary
 
         # TODO::deal final cards to dealer
 
