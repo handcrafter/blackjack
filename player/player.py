@@ -22,21 +22,21 @@ class Player():
     def bet(self) -> int:
         """Ask the user to bet
 
-        Raises:
-            NotImplementedError: [description]
+
 
         Returns:
             int: amount of money the player has bet
         """
+        user_bet = 0
         while True:
             try:
-                inp_bet = input("How much do you want to bet?")
+                user_bet = int(input("How much do you want to bet?")
+                break
             except ValueError:
                 print("Wrong input. Try again")
-            else:
-                break
+        return user_bet
 
-        raise NotImplementedError
+
 
     def act(self) -> Action:
         """Ask the player to hit or stay
@@ -44,18 +44,18 @@ class Player():
         Returns:
             Action: action taken by the player
         """
+        player_action=0
         while True:
-            inp_action = input("type h for hit and s for stay")
-            if inp_action[0].lower() == 'h':
+            user_action=input("type h for hit and s for stay")
+            if user_action[0].lower() == 'h':
                 print("Player hits")
-                return Action.HIT
+                player_action=Action.HIT
             elif:
-                inp_action[0].lower() == 's':
-                print("Player stands")
-                return Action.STAY
+                user_action[0].lower() == 's':
+                print("Player stays")
+                player_action=Action.STAY
             else:
                 print("Wrong input.Try again")
                 continue
             break
-
-        raise NotImplementedError
+        return player_action
