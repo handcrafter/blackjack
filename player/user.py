@@ -49,8 +49,7 @@ class User(Player):
             if user_action[0].lower() == 'h':
                 print("Player hits")
                 player_action = Action.HIT
-            elif:
-                user_action[0].lower() == 's':
+            elif user_action[0].lower() == 's':
                 print("Player stays")
                 player_action = Action.STAY
             else:
