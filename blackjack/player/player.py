@@ -1,6 +1,8 @@
 from abc import ABC, abstractmethod
 from enum import Enum
-from card import Card
+from typing import List
+
+from blackjack.card import Card
 
 
 class Action(Enum):

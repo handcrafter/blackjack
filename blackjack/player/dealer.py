@@ -1,4 +1,6 @@
-from .player import Player
+from .player import Player, Action
+from blackjack.card import Card
+from typing import List
 
 
 class Dealer(Player):

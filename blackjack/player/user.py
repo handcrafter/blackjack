@@ -1,4 +1,7 @@
+from typing import List
+
 from .player import Player, Action
+from blackjack.card import Card
 
 
 class User(Player):

@@ -28,9 +28,6 @@ class Deck():
 
         self.cards.sort()
 
-    def sort(self):
-        raise NotImplementedError
-
     def draw(self) -> Card:
         """[summary]
 
