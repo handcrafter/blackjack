@@ -23,3 +23,16 @@ class Card():
         """
         self.suit = suit
         self.number = number
+
+    def __lt__(self, other):
+        """[summary]
+
+        Args:
+            other ([type]): [description]
+
+        Returns:
+            [type]: [description]
+        """
+
+        # TODO:: use suit information
+        return self.number < other.number
