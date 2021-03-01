@@ -44,7 +44,7 @@ class Player():
         Returns:
             Action: action taken by the player
         """
-        player_action=action.stay
+        player_action=Action.STAY
         while True:
             user_action=input("type h for hit and s for stay")
             if user_action[0].lower() == 'h':
