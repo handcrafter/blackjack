@@ -1,3 +1,3 @@
 # blackjack
 
-Harold Im
+Harold Im David KIM
