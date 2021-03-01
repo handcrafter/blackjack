@@ -28,7 +28,8 @@ class User(Player):
         # TODO:: ask user using input()
         raise NotImplementedError
 
-    def act(self) -> Action:
+    def act(self,
+            hand: List[Card]) -> Action:
         """Ask the user to hit or stay
 
         Returns:

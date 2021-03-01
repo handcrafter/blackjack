@@ -17,6 +17,9 @@ class Deck():
 
         raise NotImplementedError
 
+    def sort(self):
+        raise NotImplementedError
+
     def draw(self) -> Card:
         """[summary]
 

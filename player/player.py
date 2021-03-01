@@ -1,4 +1,6 @@
+from abc import ABC, abstractmethod
 from enum import Enum
+from card import Card
 
 
 class Action(Enum):
@@ -6,7 +8,7 @@ class Action(Enum):
     STAY = 2
 
 
-class Player():
+class Player(ABC):
     """[summary]
     """
 
@@ -19,21 +21,24 @@ class Player():
         """
         self.name = name
 
+    @abstractmethod
     def bet(self) -> int:
-        """Ask the user to bet
-
-        Raises:
-            NotImplementedError: [description]
+        """abstract method for getting the bet made by the player
 
         Returns:
             int: amount of money the player has bet
         """
-        raise NotImplementedError
+        pass
 
-    def act(self) -> Action:
-        """Ask the player to hit or stay
+    @abstractmethod
+    def act(self,
+            hand: List[Card]) -> Action:
+        """abstract method for getting the action played by the player for the given hand
+
+        Args:
+            hand (List[Card]): hand of the user
 
         Returns:
-            Action: action taken by the player
+            Action: action played by the user
         """
-        raise NotImplementedError
+        pass

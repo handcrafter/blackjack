@@ -1,2 +1,2 @@
 from .deck import Deck
-from .card import Card
+from .card import Card, Suit
