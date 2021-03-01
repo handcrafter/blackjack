@@ -9,20 +9,24 @@ class Deck():
     def __init__(self):
         """[summary]
         """
-        self.cards = []
-        for i in suit:
-            for j in number:
-                self.cards.append(Card(suit, number))
-     reset()
+        self.reset()
 
     def reset(self):
         """Refill the deck and keep it sorted
         """
 
-        raise NotImplementedError
+        self.cards = []
+        for suit in Suit:
+            for number in range(1, 13):
+                self.cards.append(Card(suit, number))
 
-        new_deck = sort(self.cards)
-        return new_deck
+        self.sort()
+
+    def sort(self):
+        """sorts cards in the deck
+        """
+
+        self.cards.sort()
 
     def draw(self) -> Card:
         """[summary]
@@ -31,15 +35,10 @@ class Deck():
             Card: [description]
         """
 
-        raise NotImplementedError
-
-        draw_card = self.cards.pop()
-
-        return draw_card
+        return self.cards.pop()
 
     def shuffle(self):
         """[summary]
         """
 
-        raise NotImplementedError
         random.shuffle(self.cards)
