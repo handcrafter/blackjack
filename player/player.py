@@ -22,9 +22,6 @@ class Player():
     def bet(self) -> int:
         """Ask the user to bet
 
-        Raises:
-            NotImplementedError: [description]
-
         Returns:
             int: amount of money the player has bet
         """

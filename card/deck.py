@@ -1,4 +1,5 @@
 from .card import Card, Suit
+import random
 
 
 class Deck():
@@ -8,14 +9,24 @@ class Deck():
     def __init__(self):
         """[summary]
         """
-        self.cards = []
-        # reset()
+        self.reset()
 
     def reset(self):
         """Refill the deck and keep it sorted
         """
 
-        raise NotImplementedError
+        self.cards = []
+        for suit in Suit:
+            for number in range(1, 13):
+                self.cards.append(Card(suit, number))
+
+        self.sort()
+
+    def sort(self):
+        """sorts cards in the deck
+        """
+
+        self.cards.sort()
 
     def draw(self) -> Card:
         """[summary]
@@ -24,10 +35,10 @@ class Deck():
             Card: [description]
         """
 
-        raise NotImplementedError
+        return self.cards.pop()
 
     def shuffle(self):
         """[summary]
         """
 
-        raise NotImplementedError
+        random.shuffle(self.cards)
