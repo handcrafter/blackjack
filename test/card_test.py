@@ -49,7 +49,7 @@ class TestDeck(unittest.TestCase):
         after_draw_card_length = len(self.cards)
 
         self.assertEqual(after_draw_card_length, before_draw_card_length + 1)
-        self.assertEqual(card_drawn.number < 14 and card_drawn.number > 0)
+        self.assertTrue(card_drawn.number < 14 and card_drawn.number > 0)
         self.assertEqual(card_drawn.suit in Suit)
 
 

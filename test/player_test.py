@@ -16,7 +16,7 @@ class TestUser(unittest.TestCase):
     def test_act(self):
         sample_hand = [Card(Suit.DIAMONDS, 1)]
         user_act = self.user.act(sample_hand)
-        self.assertTrue('foo'.upper() in Action)
+        self.assertTrue(user_act in Action)
 
 
 class TestDealer(unittest.TestCase):
