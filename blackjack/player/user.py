@@ -1,4 +1,7 @@
+from typing import List
+
 from .player import Player, Action
+from blackjack.card import Card
 
 
 class User(Player):
@@ -36,7 +39,8 @@ class User(Player):
                 print("Wrong input. Try again")
         return user_bet
 
-    def act(self) -> Action:
+    def act(self,
+            hand: List[Card]) -> Action:
         """Ask the user to hit or stay
 
         Returns:

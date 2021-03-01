@@ -1,5 +1,5 @@
-from table import Table
-from player import User, Dealer
+from .table import Table
+from .player import User, Dealer
 
 
 def main():

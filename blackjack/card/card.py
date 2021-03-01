@@ -24,7 +24,7 @@ class Card():
         self.suit = suit
         self.number = number
 
-    def __lt__(self, other):
+    def __lt__(self, other) -> bool:
         """[summary]
 
         Args:
