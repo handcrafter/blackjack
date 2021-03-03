@@ -1,6 +1,7 @@
-from blackjack.player import User, Dealer, Action
-
 import unittest
+
+from blackjack.card import Card, Suit
+from blackjack.player import Action, Dealer, User
 
 
 class TestUser(unittest.TestCase):
@@ -11,7 +12,7 @@ class TestUser(unittest.TestCase):
         user = User("test_user")
         user_bet = user.bet()
         self.assertEqual(type(user_bet), int)
-        self.sssertTrue(user_bet > 0)
+        self.assertTrue(user_bet > 0)
 
     def test_act(self):
         """[summary]
@@ -28,14 +29,20 @@ class TestDealer(unittest.TestCase):
         """Dealer bet should be invalid
         """
         dealer = Dealer("test_dealer")
-        self.assertRaises(NotImplementedError, dealer.bet())
+        self.assertRaises(NotImplementedError, dealer.bet)
 
     def test_act(self):
-        """[summary]
+        """testing if dealer keeps hitting 
+           until total sum of cards reach 17.
         """
         dealer = Dealer("test_dealer")
-        dealer_action = dealer.act()
+        dealer_action = dealer.act([Card(Suit.DIAMONDS, 1)])
         self.assertTrue(dealer_action in Action)
+
+        dealer_action_stay = dealer.act([Card(Suit.DIAMONDS, 10), Card(Suit.SPADES, 9)])  # action hit
+
+        self.assertEqual(dealer_action, Action.HIT)
+        self.assertEqual(dealer_action_stay, Action.STAY)  # if () result is false, then pass/true
 
 
 if __name__ == '__main__':

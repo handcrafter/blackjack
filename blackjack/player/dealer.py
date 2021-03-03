@@ -1,6 +1,8 @@
-from .player import Player, Action
-from blackjack.card import Card
 from typing import List
+
+from blackjack.card import Card
+
+from .player import Action, Player
 
 
 class Dealer(Player):
@@ -40,4 +42,14 @@ class Dealer(Player):
         Returns:
             Action: [description]
         """
-        raise NotImplementedError
+        #raise NotImplementedError
+        sum = 0
+        for card in hand:
+            sum += card.number  # sum = sum + card.number
+
+        if sum < 17:
+            action = Action.HIT
+        else:
+            action = Action.STAY
+
+        return action
