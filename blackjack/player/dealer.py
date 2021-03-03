@@ -1,6 +1,8 @@
-from .player import Player, Action
-from blackjack.card import Card
 from typing import List
+
+from blackjack.card import Card
+
+from .player import Action, Player
 
 
 class Dealer(Player):
@@ -32,12 +34,16 @@ class Dealer(Player):
         """Dealer must be hitting when the hand is less than 16
 
         Args:
-            hand (List[Card]): [description]
-
-        Raises:
-            NotImplementedError: [description]
-
+            hand (List[Card]): Implement Dealer's action when total value of card is less than16
         Returns:
-            Action: [description]
+            Action: Dealer hits when total value of card is less than 16
         """
-        raise NotImplementedError
+        sum = 0
+        for card in hand:
+            sum += card.number
+
+        action = Action.STAY
+        if sum < 16:
+            action = Action.HIT
+
+        return action

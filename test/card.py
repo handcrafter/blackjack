@@ -1,6 +1,6 @@
-from blackjack.card import Deck, Card, Suit
-
 import unittest
+
+from blackjack.card import Card, Deck, Suit
 
 
 class TestCard(unittest.TestCase):
