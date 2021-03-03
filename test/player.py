@@ -7,7 +7,7 @@ from blackjack.player import Action, Dealer, User
 class TestUser(unittest.TestCase):
 
     def test_bet(self):
-        """[summary]
+        """testing if player puts valid input for betting
         """
         user = User("test_user")
         user_bet = user.bet()
@@ -15,7 +15,7 @@ class TestUser(unittest.TestCase):
         self.assertTrue(user_bet > 0)
 
     def test_act(self):
-        """[summary]
+        """testing if player puts valid input for action
         """
         user = User("test_user")
         sample_hand = [Card(Suit.DIAMONDS, 1)]
@@ -32,12 +32,24 @@ class TestDealer(unittest.TestCase):
         self.assertRaises(NotImplementedError, dealer.bet)
 
     def test_act(self):
+<<<<<<< HEAD
         """testing if dealer keeps hitting 
            until total sum of cards reach 17.
         """
         dealer = Dealer("test_dealer")
         dealer_action = dealer.act([Card(Suit.DIAMONDS, 1)])
         self.assertTrue(dealer_action in Action)
+=======
+        """testing if dealer keep hits until total value of card reach 16
+        """
+        dealer = Dealer("test_dealer")
+        #total value is less than 16, expected to hit
+        dealer_action = dealer.act([Card(Suit.DIAMONDS, 1)])
+        self.assertEqual(dealer_action, Action.HIT)
+        #total value is greather than 16, expected to stay
+        dealer_action_stay = dealer.act([Card(Suit.DIAMONDS, 10), Card(Suit.DIAMONDS, 7)])
+        self.assertEqual(dealer_action_stay, Action.STAY)
+>>>>>>> master
 
         dealer_action_stay = dealer.act([Card(Suit.DIAMONDS, 10), Card(Suit.SPADES, 9)])  # action hit
 
