@@ -34,13 +34,9 @@ class Dealer(Player):
         """Dealer must be hitting when the hand is less than 16
 
         Args:
-            hand (List[Card]): [description]
-
-        Raises:
-            NotImplementedError: [description]
-
+            hand (List[Card]): Implement Dealer's action when total value of card is less than16
         Returns:
-            Action: [description]
+            Action: Dealer hits when total value of card is less than 16
         """
         sum = 0
         for card in hand:

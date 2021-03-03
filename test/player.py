@@ -32,12 +32,14 @@ class TestDealer(unittest.TestCase):
         self.assertRaises(NotImplementedError, dealer.bet)
 
     def test_act(self):
-        """testing if dealer keep hits untill total value of card reach 16
+        """testing if dealer keep hits until total value of card reach 16
         """
         dealer = Dealer("test_dealer")
+        #total value is less than 16, expected to hit
         dealer_action = dealer.act([Card(Suit.DIAMONDS, 1)])
-        dealer_action_stay = dealer.act([Card(Suit.DIAMONDS, 10), Card(Suit.DIAMONDS, 7)])
         self.assertEqual(dealer_action, Action.HIT)
+        #total value is greather than 16, expected to stay
+        dealer_action_stay = dealer.act([Card(Suit.DIAMONDS, 10), Card(Suit.DIAMONDS, 7)])
         self.assertEqual(dealer_action_stay, Action.STAY)
 
 
