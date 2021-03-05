@@ -2,8 +2,6 @@ from enum import Enum
 
 
 class Suit(Enum):
-    def __str__(self):
-        return str(self.value)  # idk why this works. test result = OK. -David
 
     DIAMONDS = 1
     CLUBS = 2
@@ -31,10 +29,10 @@ class Card():
         """Test if self and other card can be sorted based on their suit and number.
 
         Args:
-            other ([type]): self and other both refer to unique cards. 
+            other ([bool]): self and other both refer to unique cards. 
 
         Returns:
-            [type]: We're using the two statements below as conditions to be applied to the sample cards under test_lt function in card.py (test).
+            [bool]: We're using the two statements below as conditions to be applied to the sample cards under test_lt function in card.py (test).
                     Compare the cards.
         """
 
