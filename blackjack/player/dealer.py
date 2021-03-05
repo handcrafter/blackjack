@@ -38,8 +38,7 @@ class Dealer(Player):
         Returns:
             Action: Dealer hits when total value of card is less than 16
         """
-<<<<<<< HEAD
-        #raise NotImplementedError
+
         sum = 0
         for card in hand:
             sum += card.number  # sum = sum + card.number
@@ -48,14 +47,5 @@ class Dealer(Player):
             action = Action.HIT
         else:
             action = Action.STAY
-=======
-        sum = 0
-        for card in hand:
-            sum += card.number
-
-        action = Action.STAY
-        if sum < 16:
-            action = Action.HIT
->>>>>>> master
 
         return action
