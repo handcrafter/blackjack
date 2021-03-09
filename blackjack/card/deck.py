@@ -1,5 +1,6 @@
-from .card import Card, Suit
 import random
+
+from .card import Card, Suit
 
 
 class Deck():

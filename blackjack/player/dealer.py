@@ -38,12 +38,14 @@ class Dealer(Player):
         Returns:
             Action: Dealer hits when total value of card is less than 16
         """
+
         sum = 0
         for card in hand:
-            sum += card.number
+            sum += card.number  # sum = sum + card.number
 
-        action = Action.STAY
-        if sum < 16:
+        if sum < 17:
             action = Action.HIT
+        else:
+            action = Action.STAY
 
         return action

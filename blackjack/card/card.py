@@ -2,6 +2,7 @@ from enum import Enum
 
 
 class Suit(Enum):
+
     DIAMONDS = 1
     CLUBS = 2
     HEARTS = 3
@@ -9,30 +10,31 @@ class Suit(Enum):
 
 
 class Card():
-    """[summary]
+    """Card has two properties: suit and number, which are used to sort the cards.
     """
 
     def __init__(self,
                  suit: Suit,
                  number: int):
-        """[summary]
+        """Card has a suit and a number, classifed as Suit and integerm, respectively.
 
         Args:
-            suit (Suit): [description]
-            number (int): [description]
+            suit (Suit): A suit is a suit/shape on card, classified as an Enum.
+            number (int): A number is a number on card, classified as an integer.
         """
         self.suit = suit
         self.number = number
 
     def __lt__(self, other) -> bool:
-        """[summary]
+        """Test if self and other card can be sorted based on their suit and number.
 
         Args:
-            other ([type]): [description]
+            other (Card): self and other both refer to unique cards. 
 
         Returns:
-            [type]: [description]
+            bool: We're using the two statements below as conditions to be applied to the sample cards under test_lt function in card.py (test).
+                    Compare the cards.
         """
 
-        # TODO:: use suit information
-        return self.number < other.number
+        # compare suit and number to compare two cards.
+        return self.suit.value < other.suit.value and self.number < other.number
