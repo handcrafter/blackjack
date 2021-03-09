@@ -29,12 +29,12 @@ class Card():
         """Test if self and other card can be sorted based on their suit and number.
 
         Args:
-            other ([bool]): self and other both refer to unique cards. 
+            other (Card): self and other both refer to unique cards. 
 
         Returns:
-            [bool]: We're using the two statements below as conditions to be applied to the sample cards under test_lt function in card.py (test).
+            bool: We're using the two statements below as conditions to be applied to the sample cards under test_lt function in card.py (test).
                     Compare the cards.
         """
 
-        # diamond = 1, club = 2, hearts = 3, spade = 4 added suit to __lt__ funciton.
+        # compare suit and number to compare two cards.
         return self.suit.value < other.suit.value and self.number < other.number

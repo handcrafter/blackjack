@@ -24,7 +24,6 @@ class TestCard(unittest.TestCase):
         self.assertTrue(card1 < card2)
         self.assertFalse(card2 < card3)
         self.assertFalse(card3 < card1)
-# D=1 H=2 C=3 S=4
 
 # class TestDeck(unittest.TestCase):
 
